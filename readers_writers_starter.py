@@ -40,6 +40,7 @@ class ReadersWritersMonitor:
     def end_write(self, writer_id: int) -> None:
         with self.condition:
             self.active_writers -= 1
+            print(f"Writer {writer_id} stops writing")
 
 # Donot Change this
 class Reader(threading.Thread):
