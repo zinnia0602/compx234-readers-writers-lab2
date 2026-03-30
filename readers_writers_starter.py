@@ -1,22 +1,3 @@
-"""
-COMPX234 - Lab Assignment 2
-Readers-Writers Problem using a Monitor in Python
-
-Starter code
-------------
-Complete the TODO sections to implement a correct monitor solution.
-
-Rules:
-1. Multiple readers may read together if no writer is writing.
-2. A writer must have exclusive access.
-3. Use the monitor methods only to control access.
-
-After you finish:
-- test the program,
-- rename this file to readers_writers.py if required by your instructor,
-- commit your work to GitHub with meaningful commit messages.
-"""
-
 from __future__ import annotations
 
 import random
@@ -43,16 +24,6 @@ class ReadersWritersMonitor:
         self.waiting_writers = 0
 
     def start_read(self, reader_id: int) -> None:
-        """
-        Called before a reader starts reading.
-        Block the reader if a writer is writing.
-
-        TODO:
-        1. Acquire the condition using 'with self.condition:'.
-        2. Wait while a writer is active.
-        3. Increase active_readers.
-        4. Print a useful log message.
-        """
         with self.condition:
             print(f"Reader {reader_id} is waiting to read")
             while self.active_writers > 0:
