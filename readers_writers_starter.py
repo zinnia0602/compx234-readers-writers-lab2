@@ -94,7 +94,6 @@ def main() -> None:
     readers = [Reader(reader_id=i, monitor=monitor) for i in range(1, 4)]
     writers = [Writer(writer_id=i, monitor=monitor) for i in range(1, 3)]
 
-    all_threats = readers + writers
     readers = [
         Reader(reader_id=1, monitor=monitor)
     ]
@@ -106,13 +105,7 @@ def main() -> None:
 
     all_threads = readers + writers
     
-    # TODO: Start all threads
-
-    
-    # TODO: Wait for all threads to finish
-
-
-    # TODO: Print final message that simulation completed
+    print("-----Starting Simulation-----")
 
 
 if __name__ == "__main__":
