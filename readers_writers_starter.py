@@ -24,17 +24,8 @@ class ReadersWritersMonitor:
             print(f"Reader {reader_id} starts reading. Active readers = {self.active_readers}")
 
     def end_read(self, reader_id: int) -> None:
-        """
-        Called after a reader finishes reading.
-
-        TODO:
-        1. Decrease active_readers.
-        2. Print a useful log message.
-        3. If this was the last reader, wake waiting threads.
-        """
         with self.condition:
-            # TODO: Replace 'pass' with your logic
-            pass
+            self.active_readers -= 1
 
     def start_write(self, writer_id: int) -> None:
         """
