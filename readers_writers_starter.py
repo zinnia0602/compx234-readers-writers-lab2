@@ -26,6 +26,7 @@ class ReadersWritersMonitor:
     def end_read(self, reader_id: int) -> None:
         with self.condition:
             self.active_readers -= 1
+            print(f"Reader {reader_id} stops reading. Active readers = {self.active_readers}")
 
     def start_write(self, writer_id: int) -> None:
         """
