@@ -33,6 +33,7 @@ class ReadersWritersMonitor:
     def start_write(self, writer_id: int) -> None:
         with self.condition:
            print(f"Writer {writer_id} is waiting to write")
+           self.waiting_writers += 1
 
     def end_write(self, writer_id: int) -> None:
         """
