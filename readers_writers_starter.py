@@ -41,6 +41,7 @@ class ReadersWritersMonitor:
         with self.condition:
             self.active_writers -= 1
             print(f"Writer {writer_id} stops writing")
+            self.condition.notify_all()
 
 # Donot Change this
 class Reader(threading.Thread):
