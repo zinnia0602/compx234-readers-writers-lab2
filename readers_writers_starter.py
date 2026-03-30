@@ -94,7 +94,7 @@ def main() -> None:
     readers = [Reader(reader_id=i, monitor=monitor) for i in range(1, 4)]
     writers = [Writer(writer_id=i, monitor=monitor) for i in range(1, 3)]
 
-    #TODO: Create at least 3 Reader threads.
+    all_threats = readers + writers
     readers = [
         Reader(reader_id=1, monitor=monitor)
     ]
