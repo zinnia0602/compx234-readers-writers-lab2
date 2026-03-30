@@ -38,17 +38,8 @@ class ReadersWritersMonitor:
                 self.condition.wait()
 
     def end_write(self, writer_id: int) -> None:
-        """
-        Called after a writer finishes writing.
-
-        TODO:
-        1. Decrease active_writers.
-        2. Print a useful log message.
-        3. Wake waiting threads.
-        """
         with self.condition:
-            # TODO: Replace 'pass' with your logic
-            pass
+            self.active_writers -= 1
 
 # Donot Change this
 class Reader(threading.Thread):
