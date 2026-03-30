@@ -87,18 +87,11 @@ class Writer(threading.Thread):
 
 
 def main() -> None:
-    """
-    Create the monitor and start the simulation.
-
-    TODO ideas:
-    - Create at least 3 readers and 2 writers.
-    - Start all threads.
-    - Join all threads.
-    - Print a final message when the simulation is complete.
-    """
+   
     random.seed(42)
 
     monitor = ReadersWritersMonitor()
+    readers = [Reader(reader_id=i, monitor=monitor) for i in range(1, 4)]
 
     #TODO: Create at least 3 Reader threads.
     readers = [
