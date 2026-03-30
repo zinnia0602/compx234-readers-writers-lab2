@@ -31,19 +31,8 @@ class ReadersWritersMonitor:
                 self.condition.notify_all()
 
     def start_write(self, writer_id: int) -> None:
-        """
-        Called before a writer starts writing.
-        Block the writer if any reader is reading or another writer is active.
-
-        TODO:
-        1. Increase waiting_writers before waiting (optional but recommended).
-        2. Wait while active_readers > 0 or active_writers > 0.
-        3. Update counters carefully when the writer can proceed.
-        4. Print a useful log message.
-        """
         with self.condition:
-            # TODO: Replace 'pass' with your logic
-            pass
+           print(f"Writer {writer_id} is waiting to write")
 
     def end_write(self, writer_id: int) -> None:
         """
