@@ -106,6 +106,8 @@ def main() -> None:
     all_threads = readers + writers
     
     print("-----Starting Simulation-----")
+    for t in all_threats:
+        t.start
 
 
 if __name__ == "__main__":
