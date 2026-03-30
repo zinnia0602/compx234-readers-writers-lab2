@@ -54,8 +54,7 @@ class ReadersWritersMonitor:
         4. Print a useful log message.
         """
         with self.condition:
-            # TODO: Replace 'pass' with your logic
-            pass
+            print(f"Reader {reader_id} is waiting to read")
 
     def end_read(self, reader_id: int) -> None:
         """
