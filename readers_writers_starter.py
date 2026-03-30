@@ -6,14 +6,6 @@ import time
 
 
 class ReadersWritersMonitor:
-    """
-    A monitor-style class that controls access to one shared resource.
-
-    Suggested shared state:
-    - active_readers: number of readers currently reading
-    - active_writers: 0 or 1
-    - waiting_writers: number of writers waiting (optional, but useful)
-    """
 
     def __init__(self) -> None:
         self.lock = threading.Lock()
@@ -28,6 +20,7 @@ class ReadersWritersMonitor:
             print(f"Reader {reader_id} is waiting to read")
             while self.active_writers > 0:
                 self.condition.wait()
+            self.active_readers += 1
 
     def end_read(self, reader_id: int) -> None:
         """
