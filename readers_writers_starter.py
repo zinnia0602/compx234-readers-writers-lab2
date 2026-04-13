@@ -110,6 +110,7 @@ def main() -> None:
         t.start（）
     for t in all_threats:
         t.join（）
+    print("-----Starting Simulation-----")
 
 
 if __name__ == "__main__":
