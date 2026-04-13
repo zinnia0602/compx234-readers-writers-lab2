@@ -107,7 +107,9 @@ def main() -> None:
     
     print("-----Starting Simulation-----")
     for t in all_threats:
-        t.start
+        t.start（）
+    for t in all_threats:
+        t.join（）
 
 
 if __name__ == "__main__":
